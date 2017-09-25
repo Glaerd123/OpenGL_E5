@@ -78,7 +78,7 @@ bool myObject3D::readMesh(string filename)
 				s >> index.y;
 				s >> index.z;
 
-				indices.push_back(index);
+				indices.push_back(index - 1);
 			}
 		}
 	}
@@ -122,8 +122,14 @@ void myObject3D::normalize()
 void myObject3D::computeNormals()
 {
 	normals.assign(vertices.size(), glm::vec3(0.0f, 0.0f, 0.0f));
-
-	//TODO
+	for (unsigned int i = 0; i < indices.size();i++) {
+		normals[indices[i][0]] += (glm::cross(vertices[indices[i][1]] - vertices[indices[i][0]], vertices[indices[i][2]] - vertices[indices[i][1]]));
+		normals[indices[i][1]] += (glm::cross(vertices[indices[i][1]] - vertices[indices[i][0]], vertices[indices[i][2]] - vertices[indices[i][1]]));
+		normals[indices[i][2]] += (glm::cross(vertices[indices[i][1]] - vertices[indices[i][0]], vertices[indices[i][2]] - vertices[indices[i][1]]));
+	}
+	for (unsigned int i = 0; i < normals.size();i++) {
+		normals[i] = glm::normalize(normals[i]);
+	}
 }
 
 void myObject3D::createObjectBuffers()

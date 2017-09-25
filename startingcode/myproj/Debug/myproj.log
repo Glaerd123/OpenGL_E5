@@ -1,3 +1,7 @@
-﻿  myObject3D.cpp
-  myproj.vcxproj -> C:\Users\magnanc\Downloads\startingcode\startingcode\Debug\myproj.exe
-  myproj.vcxproj -> C:\Users\magnanc\Downloads\startingcode\startingcode\Debug\myproj.pdb (Full PDB)
+﻿cl : Ligne de commande warning D9030: '/Gm' incompatible avec le multitraitement ; commutateur /MP ignoré
+  myObject3D.cpp
+  myCamera.cpp
+  main.cpp
+  Génération de code en cours...
+  myproj.vcxproj -> U:\E5\OpenGL\startingcode\Debug\myproj.exe
+  myproj.vcxproj -> U:\E5\OpenGL\startingcode\Debug\myproj.pdb (Full PDB)
